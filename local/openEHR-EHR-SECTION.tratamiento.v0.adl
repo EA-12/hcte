@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"d1aa5180a3281eb97fa649d7cb0791df">
+		["MD5-CAM-1.0.1"] = <"9564f4ca374c5be8920326d14207c49f">
 		["build_uid"] = <"21742d61-67f1-3ae4-bcac-fcb3f3b4b9e7">
 	>
 
@@ -42,7 +42,7 @@ definition
 				items cardinality matches {1..*; unordered} matches {
 					allow_archetype ENTRY[at0012] occurrences matches {0..*} matches {    -- Tratamiento quirúrgico
 						include
-							archetype_id/value matches {/.*/}
+							archetype_id/value matches {/openEHR-EHR-ACTION\.tratamiento_quirurgico\.v0/}
 					}
 				}
 			}
