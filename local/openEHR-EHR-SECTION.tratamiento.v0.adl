@@ -23,16 +23,28 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"cb70415af69668e23aa43a1f423fe246">
+		["MD5-CAM-1.0.1"] = <"c3fb00616bcaf42650e4bd5d3e2dfd09">
 		["build_uid"] = <"21742d61-67f1-3ae4-bcac-fcb3f3b4b9e7">
 	>
 
 definition
 	SECTION[at0000] matches {    -- Tratamiento
 		items cardinality matches {1..*; unordered} matches {
-			ENTRY[at0001] occurrences matches {0..1} matches {*}    -- Medicación
-			ENTRY[at0002] occurrences matches {0..1} matches {*}    -- Tratamiento quirúrgico
-			ENTRY[at0003] occurrences matches {0..1} matches {*}    -- Hábitos
+			SECTION[at0004] occurrences matches {0..1} matches {    -- Medicación
+				items cardinality matches {1..*; unordered} matches {
+					ENTRY[at0007] occurrences matches {0..1} matches {*}    -- Medicación
+				}
+			}
+			SECTION[at0005] occurrences matches {0..1} matches {    -- Tratamiento quirúrgico
+				items cardinality matches {1..*; unordered} matches {
+					ENTRY[at0008] occurrences matches {0..1} matches {*}    -- Tratamiento quirúrgico
+				}
+			}
+			SECTION[at0006] occurrences matches {0..1} matches {    -- Hábitos
+				items cardinality matches {1..*; unordered} matches {
+					ENTRY[at0009] occurrences matches {0..1} matches {*}    -- Hábito
+				}
+			}
 		}
 	}
 
@@ -44,16 +56,28 @@ ontology
 					text = <"Tratamiento">
 					description = <"Tratamiento">
 				>
-				["at0001"] = <
+				["at0004"] = <
 					text = <"Medicación">
 					description = <"">
 				>
-				["at0002"] = <
+				["at0005"] = <
 					text = <"Tratamiento quirúrgico">
 					description = <"">
 				>
-				["at0003"] = <
+				["at0006"] = <
 					text = <"Hábitos">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Medicación">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Tratamiento quirúrgico">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Hábito">
 					description = <"">
 				>
 			>
