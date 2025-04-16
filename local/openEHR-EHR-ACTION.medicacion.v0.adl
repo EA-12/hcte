@@ -1,0 +1,133 @@
+archetype (adl_version=1.4; uid=478902c6-35a7-47bf-b654-72f02a23e598)
+	openEHR-EHR-ACTION.medicacion.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"2025-04-16">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"155974e923feff2f80d37e49f3f0dae4">
+		["build_uid"] = <"54a7703e-5388-3393-b514-dcefd7b57eab">
+	>
+
+definition
+	ACTION[at0000] matches {    -- Medicacion
+		description matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0006] occurrences matches {0..1} matches {    -- Nombre del medicamento
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0007] occurrences matches {0..1} matches {    -- Dosis
+						value matches {
+							DV_QUANTITY matches {*}
+						}
+					}
+					ELEMENT[at0008] occurrences matches {0..1} matches {    -- Unidad de dosis
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0009] occurrences matches {0..1} matches {    -- Frecuencia
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0010] occurrences matches {0..1} matches {    -- Duración del tratamiento
+						value matches {
+							DV_DURATION matches {*}
+						}
+					}
+					ELEMENT[at0011] occurrences matches {0..1} matches {    -- Vía de administración
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0012] occurrences matches {0..1} matches {    -- Fecha de inicio
+						value matches {
+							DV_DATE matches {*}
+						}
+					}
+					ELEMENT[at0013] occurrences matches {0..1} matches {    -- Observaciones
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0003] matches {*}    -- Item tree
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Medicacion">
+					description = <"Medicacion">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0006"] = <
+					text = <"Nombre del medicamento">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Dosis">
+					description = <"Cantidad (mg, ml...)">
+				>
+				["at0008"] = <
+					text = <"Unidad de dosis">
+					description = <"Ej: \"mg\", \"ml\", \"UI\"">
+				>
+				["at0009"] = <
+					text = <"Frecuencia">
+					description = <"Ej: \"cada 8h\", \"1 vez al día\"">
+				>
+				["at0010"] = <
+					text = <"Duración del tratamiento">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Vía de administración">
+					description = <"Ej: oral, IV, subcutánea, etc.">
+				>
+				["at0012"] = <
+					text = <"Fecha de inicio">
+					description = <"Fecha programada de inicio del tratamiento">
+				>
+				["at0013"] = <
+					text = <"Observaciones">
+					description = <"Notas adicionales">
+				>
+			>
+		>
+	>
