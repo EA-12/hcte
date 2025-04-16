@@ -1,0 +1,108 @@
+archetype (adl_version=1.4; uid=1d4dbf3f-30af-4a9a-90f2-bb66c2e66799)
+	openEHR-EHR-ACTION.tratamiento_quirurgico.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"2025-04-16">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"0231e37c910afd195f1011f5f306a2e7">
+		["build_uid"] = <"c6a5e7b0-0fdb-3c34-aa9b-517e03324dc9">
+	>
+
+definition
+	ACTION[at0000] matches {    -- Tratamiento quirurgico
+		description matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Tipo de intervención
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0003] occurrences matches {0..1} matches {    -- Fecha de la cirugía
+						value matches {
+							DV_DATE matches {*}
+						}
+					}
+					ELEMENT[at0004] occurrences matches {0..1} matches {    -- Lugar de intervención
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0005] occurrences matches {0..1} matches {    -- Resultado
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0006] occurrences matches {0..1} matches {    -- Profesional responsable
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0007] occurrences matches {0..1} matches {    -- Observaciones
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Tratamiento quirurgico">
+					description = <"Tratamiento quirurgico">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Tipo de intervención">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Fecha de la cirugía">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Lugar de intervención">
+					description = <"Hospital/clínica">
+				>
+				["at0005"] = <
+					text = <"Resultado">
+					description = <"Resultado quirúrgico">
+				>
+				["at0006"] = <
+					text = <"Profesional responsable">
+					description = <"Nombre o ID del médico/cirujano">
+				>
+				["at0007"] = <
+					text = <"Observaciones">
+					description = <"Cualquier nota adicional">
+				>
+			>
+		>
+	>
