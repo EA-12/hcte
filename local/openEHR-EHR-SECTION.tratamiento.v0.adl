@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"c3fb00616bcaf42650e4bd5d3e2dfd09">
+		["MD5-CAM-1.0.1"] = <"6aceec2bf512db5b27e2e98e22952d13">
 		["build_uid"] = <"21742d61-67f1-3ae4-bcac-fcb3f3b4b9e7">
 	>
 
@@ -32,7 +32,10 @@ definition
 		items cardinality matches {1..*; unordered} matches {
 			SECTION[at0004] occurrences matches {0..1} matches {    -- Medicación
 				items cardinality matches {1..*; unordered} matches {
-					ENTRY[at0007] occurrences matches {0..1} matches {*}    -- Medicación
+					allow_archetype ENTRY[at0011] occurrences matches {0..*} matches {    -- Medicación
+						include
+							archetype_id/value matches {/.*/}
+					}
 				}
 			}
 			SECTION[at0005] occurrences matches {0..1} matches {    -- Tratamiento quirúrgico
@@ -68,16 +71,16 @@ ontology
 					text = <"Hábitos">
 					description = <"">
 				>
-				["at0007"] = <
-					text = <"Medicación">
-					description = <"">
-				>
 				["at0008"] = <
 					text = <"Tratamiento quirúrgico">
 					description = <"">
 				>
 				["at0009"] = <
 					text = <"Hábito">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Medicación">
 					description = <"">
 				>
 			>
