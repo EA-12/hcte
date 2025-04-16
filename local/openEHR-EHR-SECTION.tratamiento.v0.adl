@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"e675aa228d3f14d44a1c5f18ace66372">
+		["MD5-CAM-1.0.1"] = <"78fb62497ed4dcd6eb07b07cad14dcb8">
 		["build_uid"] = <"21742d61-67f1-3ae4-bcac-fcb3f3b4b9e7">
 	>
 
@@ -50,7 +50,7 @@ definition
 				items cardinality matches {1..*; unordered} matches {
 					allow_archetype ENTRY[at0013] occurrences matches {0..*} matches {    -- Hábito
 						include
-							archetype_id/value matches {/.*/}
+							archetype_id/value matches {/openEHR-EHR-OBSERVATION\.habito\.v0/}
 					}
 				}
 			}
