@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"0a13c296e08e22fc1611b48f8dd72a72">
+		["MD5-CAM-1.0.1"] = <"d1aa5180a3281eb97fa649d7cb0791df">
 		["build_uid"] = <"21742d61-67f1-3ae4-bcac-fcb3f3b4b9e7">
 	>
 
@@ -34,7 +34,7 @@ definition
 				items cardinality matches {1..*; unordered} matches {
 					allow_archetype ENTRY[at0011] occurrences matches {0..*} matches {    -- Medicación
 						include
-							archetype_id/value matches {/.*/}
+							archetype_id/value matches {/openEHR-EHR-ACTION\.medicacion\.v0/}
 					}
 				}
 			}
