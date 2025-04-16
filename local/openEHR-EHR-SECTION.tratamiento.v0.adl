@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"9564f4ca374c5be8920326d14207c49f">
+		["MD5-CAM-1.0.1"] = <"e675aa228d3f14d44a1c5f18ace66372">
 		["build_uid"] = <"21742d61-67f1-3ae4-bcac-fcb3f3b4b9e7">
 	>
 
@@ -48,7 +48,10 @@ definition
 			}
 			SECTION[at0006] occurrences matches {0..1} matches {    -- Hábitos
 				items cardinality matches {1..*; unordered} matches {
-					ENTRY[at0009] occurrences matches {0..1} matches {*}    -- Hábito
+					allow_archetype ENTRY[at0013] occurrences matches {0..*} matches {    -- Hábito
+						include
+							archetype_id/value matches {/.*/}
+					}
 				}
 			}
 		}
@@ -74,16 +77,16 @@ ontology
 					text = <"Hábitos">
 					description = <"">
 				>
-				["at0009"] = <
-					text = <"Hábito">
-					description = <"">
-				>
 				["at0011"] = <
 					text = <"Medicación">
 					description = <"">
 				>
 				["at0012"] = <
 					text = <"Tratamiento quirúrgico">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Hábito">
 					description = <"">
 				>
 			>
