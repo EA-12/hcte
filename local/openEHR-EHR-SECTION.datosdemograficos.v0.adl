@@ -1,0 +1,189 @@
+archetype (adl_version=1.4; uid=f416e13b-5e43-415d-842c-072ed2b6cb92)
+	openEHR-EHR-SECTION.datosdemograficos.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"2025-05-03">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"34021260f133a7ffc99f00635eb77fea">
+		["build_uid"] = <"54244ccd-fa39-39b0-a819-ac4469b12cce">
+	>
+
+definition
+	SECTION[at0000] matches {    -- DatosDemograficos
+		items cardinality matches {1..*; unordered} matches {
+			GENERIC_ENTRY[at0007] occurrences matches {0..1} matches {    -- Datos demograficos
+				data matches {
+					ITEM_TREE[at0008] matches {    -- Item tree
+						items cardinality matches {0..*; unordered} matches {
+							ELEMENT[at0009] occurrences matches {0..1} matches {    -- Nombre
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0011] occurrences matches {0..1} matches {    -- Primer apellido
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0012] occurrences matches {0..1} matches {    -- Segundo apellido
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0013] occurrences matches {0..1} matches {    -- Fecha de nacimiento
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0014] occurrences matches {0..1} matches {    -- DNI
+								value matches {
+									DV_CODED_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0015] occurrences matches {0..1} matches {    -- Sexo
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0016,    -- H
+											at0017,    -- M
+											at0018]    -- UNK
+										}
+									}
+								}
+							}
+							ELEMENT[at0019] occurrences matches {0..1} matches {    -- Dirección
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0020] occurrences matches {0..1} matches {    -- Teléfono
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0021] occurrences matches {0..1} matches {    -- DV_TEXT
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0022] occurrences matches {0..1} matches {    -- Número de historia clínica
+								value matches {
+									DV_IDENTIFIER matches {*}
+								}
+							}
+							ELEMENT[at0023] occurrences matches {0..1} matches {    -- Número seguridad social
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0024] occurrences matches {0..1} matches {    -- Teléfono contacto de referencia
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"DatosDemograficos">
+					description = <"DatosDemograficos">
+				>
+				["at0007"] = <
+					text = <"Datos demograficos">
+					description = <"Datos demográficos de la persona (edad, género, nombre...)">
+				>
+				["at0008"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0009"] = <
+					text = <"Nombre">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Primer apellido">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Segundo apellido">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Fecha de nacimiento">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"DNI">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Sexo">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"H">
+					description = <"Hombre">
+				>
+				["at0017"] = <
+					text = <"M">
+					description = <"Mujer">
+				>
+				["at0018"] = <
+					text = <"UNK">
+					description = <"Desconocido">
+				>
+				["at0019"] = <
+					text = <"Dirección">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Teléfono">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"DV_TEXT">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Número de historia clínica">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Número seguridad social">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Teléfono contacto de referencia">
+					description = <"">
+				>
+			>
+		>
+	>
