@@ -1,0 +1,80 @@
+archetype (adl_version=1.4; uid=4e0bd5d2-fb61-49ef-9c50-55ab26c4d6b1)
+	openEHR-EHR-COMPOSITION.paciente.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"2025-04-25">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["build_uid"] = <"57fe7523-cb26-3a54-850b-2d7025063d52">
+		["MD5-CAM-1.0.1"] = <"ca057dbcc9424c07ab91a908b2946fd0">
+	>
+
+definition
+	COMPOSITION[at0000] matches {    -- Paciente
+		category matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {
+					[openehr::433]
+				}
+			}
+		}
+		context matches {
+			EVENT_CONTEXT matches {
+				other_context matches {
+					ITEM_TREE[at0001] matches {*}    -- Item tree
+				}
+			}
+		}
+		content cardinality matches {1..*; unordered} matches {
+			allow_archetype SECTION[at0002] occurrences matches {0..*} matches {    -- DatosDemograficos
+				include
+					archetype_id/value matches {/.*|openEHR-EHR-SECTION\.datosdemograficos\.v0/}
+			}
+			allow_archetype SECTION[at0003] occurrences matches {0..*} matches {    -- DatosClinicos
+				include
+					archetype_id/value matches {/.*|openEHR-EHR-SECTION\.datosclinicos\.v0/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Paciente">
+					description = <"Paciente">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"DatosDemograficos">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"DatosClinicos">
+					description = <"Datos clínicos del paciente">
+				>
+			>
+		>
+	>
