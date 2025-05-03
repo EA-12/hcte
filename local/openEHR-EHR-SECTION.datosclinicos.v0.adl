@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"3b0cea5d880ff29f051ceae2cd8d328e">
+		["MD5-CAM-1.0.1"] = <"95eb7e244151f7b5b93feba3ce576a03">
 		["build_uid"] = <"426f2205-9cec-3f20-b64b-60dfc589207a">
 	>
 
@@ -164,7 +164,7 @@ ontology
 				>
 				["at0018"] = <
 					text = <"Tratamientos">
-					description = <"Tratamientos, medicación y hábitos tóxicos">
+					description = <"Tratamientos, medicación y hábitos tóxicos relacionados con enfermedades distintas de SOP">
 				>
 			>
 		>
