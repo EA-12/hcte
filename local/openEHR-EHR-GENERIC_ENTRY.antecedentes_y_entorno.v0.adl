@@ -1,0 +1,51 @@
+archetype (adl_version=1.4; uid=59521de3-1b09-491f-bf3f-a56a046ca386)
+	openEHR-EHR-GENERIC_ENTRY.antecedentes_y_entorno.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"2025-05-03">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"9b6a7ba1c9f81df53da140402538e7ec">
+		["build_uid"] = <"122d624e-0ffc-352f-ba71-1150ca26ab35">
+	>
+
+definition
+	GENERIC_ENTRY[at0000] matches {    -- Antecedentes y entorno
+		data matches {
+			ITEM_TREE[at0001] matches {*}    -- Item tree
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Antecedentes y entorno">
+					description = <"Antecedentes y entorno">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+			>
+		>
+	>
