@@ -1,0 +1,62 @@
+archetype (adl_version=1.4; uid=debbef44-cf6b-416c-9198-f756e50148a2)
+	openEHR-EHR-SECTION.datosclinicos.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"2025-05-03">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"89276e14847fdf8a651a52574c38a1b2">
+		["build_uid"] = <"426f2205-9cec-3f20-b64b-60dfc589207a">
+	>
+
+definition
+	SECTION[at0000] matches {    -- DatosClinicos
+		items cardinality matches {1..*; unordered} matches {
+			allow_archetype ENTRY[at0005] occurrences matches {0..*} matches {    -- Antecedentes y entorno
+				include
+					archetype_id/value matches {/.*/}
+			}
+			allow_archetype ENTRY[at0006] occurrences matches {0..*} matches {    -- Tratamientos previos
+				include
+					archetype_id/value matches {/.*/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"DatosClinicos">
+					description = <"DatosClinicos">
+				>
+				["at0005"] = <
+					text = <"Antecedentes y entorno">
+					description = <"Antecedentes clínicos del paciente ">
+				>
+				["at0006"] = <
+					text = <"Tratamientos previos">
+					description = <"Tratamientos previos no relacionados directamente con SOP">
+				>
+			>
+		>
+	>
