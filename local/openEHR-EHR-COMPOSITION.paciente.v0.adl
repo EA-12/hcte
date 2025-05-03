@@ -23,8 +23,8 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"ff331cbb047cef807f5dcd128dc2fb08">
 		["build_uid"] = <"57fe7523-cb26-3a54-850b-2d7025063d52">
-		["MD5-CAM-1.0.1"] = <"dd5ff844d9df86baab68f050261e96f4">
 	>
 
 definition
@@ -50,7 +50,7 @@ definition
 			}
 			allow_archetype SECTION[at0003] occurrences matches {0..*} matches {    -- DatosClinicos
 				include
-					archetype_id/value matches {/.*/}
+					archetype_id/value matches {/.*|openEHR-EHR-SECTION\.datosclinicos\.v0/}
 			}
 		}
 	}
