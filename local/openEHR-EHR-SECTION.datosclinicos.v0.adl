@@ -1,0 +1,171 @@
+archetype (adl_version=1.4; uid=de182967-0f7c-4afa-9734-6336bcb6c508)
+	openEHR-EHR-SECTION.datosclinicos.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"2025-05-03">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"95eb7e244151f7b5b93feba3ce576a03">
+		["build_uid"] = <"426f2205-9cec-3f20-b64b-60dfc589207a">
+	>
+
+definition
+	SECTION[at0000] matches {    -- DatosClinicos
+		items cardinality matches {1..*; unordered} matches {
+			SECTION[at0001] occurrences matches {0..1} matches {    -- Antecedentes
+				items cardinality matches {1..*; unordered} matches {
+					GENERIC_ENTRY[at0002] occurrences matches {0..1} matches {    -- Enfermedades familiares
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Item tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0006] occurrences matches {0..1} matches {    -- Descripción
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+					GENERIC_ENTRY[at0007] occurrences matches {0..1} matches {    -- Enfermedades previas
+						data matches {
+							ITEM_TREE[at0008] matches {    -- Item tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0009] occurrences matches {0..1} matches {    -- Descripción
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {    -- Fecha de diagnóstico
+										value matches {
+											DV_DATE matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+					GENERIC_ENTRY[at0012] occurrences matches {0..1} matches {    -- Alergias
+						data matches {
+							ITEM_TREE[at0013] matches {    -- Item tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0014] occurrences matches {0..1} matches {    -- Descripción
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+					GENERIC_ENTRY[at0015] occurrences matches {0..1} matches {    -- Actuaciones preventivas
+						data matches {
+							ITEM_TREE[at0016] matches {    -- Item tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0017] occurrences matches {0..1} matches {    -- Descripción
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			allow_archetype SECTION[at0018] occurrences matches {0..*} matches {    -- Tratamientos
+				include
+					archetype_id/value matches {/.*|openEHR-EHR-SECTION\.tratamiento\.v0/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"DatosClinicos">
+					description = <"DatosClinicos">
+				>
+				["at0001"] = <
+					text = <"Antecedentes">
+					description = <"Antecedentes">
+				>
+				["at0002"] = <
+					text = <"Enfermedades familiares">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0006"] = <
+					text = <"Descripción">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Enfermedades previas">
+					description = <"Diagnóstico de enfermedades previas">
+				>
+				["at0008"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0009"] = <
+					text = <"Descripción">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Fecha de diagnóstico">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Alergias">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0014"] = <
+					text = <"Descripción">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Actuaciones preventivas">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0017"] = <
+					text = <"Descripción">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Tratamientos">
+					description = <"Tratamientos, medicación y hábitos tóxicos relacionados con enfermedades distintas de SOP">
+				>
+			>
+		>
+	>
