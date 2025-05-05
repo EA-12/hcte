@@ -1,0 +1,86 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-OBSERVATION.informe_biopsia.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::es]>
+
+description
+    original_author = <
+        ["date"] = <"2025-04-30">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["es"] = <
+            language = <[ISO_639-1::es]>
+        >
+    >
+
+definition
+    OBSERVATION[at0000] occurrences matches {1..1} matches {  -- informe_biopsia
+        data existence matches {1..1} matches {
+            HISTORY[at0001] occurrences matches {1..1} matches {  -- HISTORY
+                events existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    POINT_EVENT[at0002] occurrences matches {0..*} matches {  -- POINT_EVENT
+                        data existence matches {1..1} matches {
+                            ITEM_TREE[at0003] occurrences matches {0..1} matches {  -- ITEM_TREE
+                                items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                    ELEMENT[at0004] occurrences matches {0..*} matches {*}  -- Tipo de muestra
+                                    ELEMENT[at0005] occurrences matches {0..*} matches {*}  -- Técnica utilizada
+                                    ELEMENT[at0006] occurrences matches {0..*} matches {*}  -- Resultado histológico
+                                    ELEMENT[at0007] occurrences matches {0..*} matches {*}  -- Diagnóstico
+                                    ELEMENT[at0008] occurrences matches {0..*} matches {*}  -- Comentarios
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["es"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"informe_biopsia">
+                    description = <"informe_biopsia">
+                >
+                ["at0001"] = <
+                    text = <"HISTORY">
+                    description = <"">
+                >
+                ["at0002"] = <
+                    text = <"POINT_EVENT">
+                    description = <"">
+                >
+                ["at0003"] = <
+                    text = <"ITEM_TREE">
+                    description = <"">
+                >
+                ["at0004"] = <
+                    text = <"Tipo de muestra">
+                    description = <"Tejido o material del que se extrajo la biopsia">
+                >
+                ["at0005"] = <
+                    text = <"Técnica utilizada">
+                    description = <"Técnica histológica aplicada a la muestra. ">
+                >
+                ["at0006"] = <
+                    text = <"Resultado histológico">
+                    description = <"Descripción microscópica de la muestra observada.">
+                >
+                ["at0007"] = <
+                    text = <"Diagnóstico">
+                    description = <"Conclusión diagnóstica derivada del análisis histológico.">
+                >
+                ["at0008"] = <
+                    text = <"Comentarios">
+                    description = <"Observaciones clínicas adicionales relevantes.">
+                >
+            >
+        >
+    >

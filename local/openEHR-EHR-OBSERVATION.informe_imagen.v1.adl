@@ -1,0 +1,86 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-OBSERVATION.informe_imagen.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::es]>
+
+description
+    original_author = <
+        ["date"] = <"2025-04-30">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["es"] = <
+            language = <[ISO_639-1::es]>
+        >
+    >
+
+definition
+    OBSERVATION[at0000] occurrences matches {1..1} matches {  -- informe_imagen
+        data existence matches {1..1} matches {
+            HISTORY[at0001] occurrences matches {1..1} matches {  -- HISTORY
+                events existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    POINT_EVENT[at0002] occurrences matches {0..*} matches {  -- POINT_EVENT
+                        data existence matches {1..1} matches {
+                            ITEM_TREE[at0003] occurrences matches {0..1} matches {  -- ITEM_TREE
+                                items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                    ELEMENT[at0004] occurrences matches {0..*} matches {*}  -- Modalidad de imagen	
+                                    ELEMENT[at0005] occurrences matches {0..*} matches {*}  -- Región anatómica	
+                                    ELEMENT[at0006] occurrences matches {0..*} matches {*}  -- Hallazgos	
+                                    ELEMENT[at0007] occurrences matches {0..*} matches {*}  -- Diagnóstico por imagen	
+                                    ELEMENT[at0008] occurrences matches {0..*} matches {*}  -- Recomendaciones	
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["es"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"informe_imagen">
+                    description = <"informe_imagen">
+                >
+                ["at0001"] = <
+                    text = <"HISTORY">
+                    description = <"">
+                >
+                ["at0002"] = <
+                    text = <"POINT_EVENT">
+                    description = <"">
+                >
+                ["at0003"] = <
+                    text = <"ITEM_TREE">
+                    description = <"">
+                >
+                ["at0004"] = <
+                    text = <"Modalidad de imagen	">
+                    description = <"Técnica de imagen utilizada. ">
+                >
+                ["at0005"] = <
+                    text = <"Región anatómica	">
+                    description = <"Parte del cuerpo que se ha examinado. ">
+                >
+                ["at0006"] = <
+                    text = <"Hallazgos	">
+                    description = <"Observaciones relevantes detectadas en la imagen médica.">
+                >
+                ["at0007"] = <
+                    text = <"Diagnóstico por imagen	">
+                    description = <"Conclusión diagnóstica basada en la interpretación de los hallazgos por imagen.">
+                >
+                ["at0008"] = <
+                    text = <"Recomendaciones	">
+                    description = <"Sugerencias clínicas o pruebas adicionales derivadas del estudio por imagen.">
+                >
+            >
+        >
+    >
