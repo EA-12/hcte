@@ -1,0 +1,68 @@
+archetype (adl_version=1.4; uid=b1c0069b-e216-354e-a583-39036962de25)
+	CEN-EN13606-ENTRY.TipoConsulta.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"20131108">
+		["name"] = <"Grupo de Informática Médica (IBIME)">
+		["organisation"] = <"Universitat Politècnica de Valencia">
+		["email"] = <"jamaldo@upv.es">
+	>
+	lifecycle_state = <"Draft">
+	other_contributors = <"Arturo Romero, Ministerio de Sanidad, Servicios Sociales e Igualdad","Pablo Serrano, Hospital de Fuenlabrada">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			keywords = <"CMDIC", ...>
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"43f64c191e4e24ec28aa4d292887b4ea">
+		["build_uid"] = <"0733e06b-5803-381b-bad3-140b639d3f8d">
+	>
+
+definition
+	ENTRY[at0000] matches {    -- Tipo de Consulta
+		items cardinality matches {0..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Tipo
+				value matches {
+					CODED_TEXT[at0003] occurrences matches {0..1} matches {    -- CODED_TEXT
+						codedValue matches {
+							CD[at0002] occurrences matches {0..1} matches {*}    -- CD
+						}
+						originalText matches {"Enfermedad","Accidente de tráfico","Accidente Laboral","Otros Accidentes"}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"Tipo de Consulta">
+					description = <"">
+				>
+				["at0001"] = <
+					text = <"Tipo">
+					description = <"Texto o código que describe el tipo de consulta">
+				>
+				["at0003"] = <
+					text = <"CODED_TEXT">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"CD">
+					description = <"">
+				>
+			>
+		>
+	>
