@@ -1,0 +1,76 @@
+archetype (adl_version=1.4; uid=a7c0eeb7-4764-3e1b-8335-91e10c877ec8)
+	CEN-EN13606-ENTRY.CentroSanitario.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"20131108">
+		["name"] = <"Grupo de Informática Médica (IBIME)">
+		["organisation"] = <"Universitat Politècnica de Valencia">
+		["email"] = <"jamaldo@upv.es">
+	>
+	lifecycle_state = <"Draft">
+	other_contributors = <"Arturo Romero, Ministerio de Sanidad, Servicios Sociales e Igualdad","Pablo Serrano, Hospital de Fuenlabrada">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+			keywords = <"CMDIC", ...>
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"ab6ff5905dbeb8c6d26bb489269fc3a5">
+		["build_uid"] = <"69efe3a2-90c5-35a6-aee4-25d854a4982e">
+	>
+
+definition
+	ENTRY[at0000] matches {    -- CentroSanitario
+		items cardinality matches {0..*; unordered} matches {
+			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Nombre del Centro
+				value matches {
+					SIMPLE_TEXT[at0002] occurrences matches {0..1} matches {    -- Nombre del Centro
+						originalText matches {/.*/}
+					}
+				}
+			}
+			ELEMENT[at0004] occurrences matches {0..1} matches {    -- Código del centro
+				value matches {
+					CV[at0005] occurrences matches {0..1} matches {    -- CV
+						codeValue matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"CentroSanitario">
+					description = <"CentroSanitario">
+				>
+				["at0001"] = <
+					text = <"Nombre del Centro">
+					description = <"Nombre del centro">
+				>
+				["at0002"] = <
+					text = <"Nombre del Centro">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Código del centro">
+					description = <"CNH y posteriormente RECESS cuando esté disponible">
+				>
+				["at0005"] = <
+					text = <"CV">
+					description = <"">
+				>
+			>
+		>
+	>
