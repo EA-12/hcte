@@ -1,0 +1,87 @@
+archetype (adl_version=1.4; uid=1cb107f5-061a-4317-96df-bf1e07ca4527)
+	openEHR-EHR-COMPOSITION.informe_medico.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"2025-05-10">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"5f0b9d4a75658de0f7cf81467a48cea0">
+		["build_uid"] = <"f16be5e4-a62e-3b1e-8086-29a66ead3b9b">
+	>
+
+definition
+	COMPOSITION[at0000] matches {    -- informe_medico
+		category matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {
+					[openehr::433]
+				}
+			}
+		}
+		context matches {
+			EVENT_CONTEXT matches {*}
+		}
+		content cardinality matches {1..*; unordered} matches {
+			SECTION[at0001] occurrences matches {0..1} matches {    -- Datos del documento
+				items cardinality matches {1..*; unordered} matches {
+					ENTRY[at0004] occurrences matches {0..1} matches {*}    -- Fecha de firma
+					ENTRY[at0005] occurrences matches {0..1} matches {*}    -- Fecha inicio de periodo
+					ENTRY[at0006] occurrences matches {0..1} matches {*}    -- Fecha fin periodo
+					allow_archetype ENTRY[at0022] occurrences matches {0..*} matches {    -- Responsable
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"informe_medico">
+					description = <"informe_medico">
+				>
+				["at0001"] = <
+					text = <"Datos del documento">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Fecha de firma">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Fecha inicio de periodo">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Fecha fin periodo">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Responsable">
+					description = <"">
+				>
+			>
+		>
+	>
