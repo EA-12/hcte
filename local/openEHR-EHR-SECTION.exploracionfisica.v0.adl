@@ -1,0 +1,124 @@
+archetype (adl_version=1.4; uid=373089cd-0a4c-4d7a-844d-b648c6707cbd)
+	openEHR-EHR-SECTION.exploracionfisica.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"2025-05-10">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"e0afb3644d1ff5ce386fede443786d76">
+		["build_uid"] = <"5b9c9178-71bb-33c9-affd-0ab3c74df2ae">
+	>
+
+definition
+	SECTION[at0000] matches {    -- ExploracionFisica
+		items cardinality matches {1..*; unordered} matches {
+			GENERIC_ENTRY[at0004] occurrences matches {0..1} matches {    -- Exploración Física
+				data matches {
+					ITEM_TREE[at0005] matches {    -- Item tree
+						items cardinality matches {0..*; unordered} matches {
+							ELEMENT[at0006] occurrences matches {0..1} matches {    -- Peso
+								value matches {
+									DV_QUANTITY matches {*}
+								}
+							}
+							ELEMENT[at0007] occurrences matches {0..1} matches {    -- Altura
+								value matches {
+									DV_QUANTITY matches {*}
+								}
+							}
+							CLUSTER[at0008] occurrences matches {0..1} matches {    -- Observaciones
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0010] occurrences matches {0..1} matches {    -- Periodo irregular
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0009] occurrences matches {0..1} matches {    -- Presencia de acné
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0011] occurrences matches {0..1} matches {    -- Aumento vello facial
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0012] occurrences matches {0..1} matches {    -- Caída de cabello
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"ExploracionFisica">
+					description = <"ExploracionFisica">
+				>
+				["at0004"] = <
+					text = <"Exploración Física">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0006"] = <
+					text = <"Peso">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Altura">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Observaciones">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Presencia de acné">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Periodo irregular">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Aumento vello facial">
+					description = <"">
+				>
+				["at0012"] = <
+					text = <"Caída de cabello">
+					description = <"">
+				>
+			>
+		>
+	>
