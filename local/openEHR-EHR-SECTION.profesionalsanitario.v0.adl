@@ -1,0 +1,117 @@
+archetype (adl_version=1.4; uid=3eb3defd-8119-451a-ace0-b27d9aabaa86)
+	openEHR-EHR-SECTION.profesionalsanitario.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::es]>
+
+description
+	original_author = <
+		["date"] = <"2025-05-10">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["es"] = <
+			language = <[ISO_639-1::es]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"9ce21c867d7f0f7b6dea495258a59bb0">
+		["build_uid"] = <"6faad390-a589-3c13-b62a-07dc3f82a527">
+	>
+
+definition
+	SECTION[at0000] matches {    -- ProfesionalSanitario
+		items cardinality matches {1..*; unordered} matches {
+			GENERIC_ENTRY[at0001] occurrences matches {0..1} matches {    -- Datos Profesional Sanitario
+				data matches {
+					ITEM_TREE[at0002] matches {    -- Item tree
+						items cardinality matches {0..*; unordered} matches {
+							ELEMENT[at0005] occurrences matches {0..1} matches {    -- Nombre
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0006] occurrences matches {0..1} matches {    -- Primer apellido
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0007] occurrences matches {0..1} matches {    -- Segundo apellido
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0008] occurrences matches {0..1} matches {    -- Número identificación
+								value matches {
+									DV_CODED_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0009] occurrences matches {0..1} matches {    -- Número colegiado
+								value matches {
+									DV_CODED_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0010] occurrences matches {0..1} matches {*}    -- Especialidad
+							ELEMENT[at0011] occurrences matches {0..1} matches {*}    -- Categoría profesional
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["es"] = <
+			items = <
+				["at0000"] = <
+					text = <"ProfesionalSanitario">
+					description = <"ProfesionalSanitario">
+				>
+				["at0001"] = <
+					text = <"Datos Profesional Sanitario">
+					description = <"">
+				>
+				["at0002"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"Nombre">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Primer apellido">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Segundo apellido">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Número identificación">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Número colegiado">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Especialidad">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Categoría profesional">
+					description = <"">
+				>
+			>
+		>
+	>
