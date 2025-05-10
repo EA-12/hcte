@@ -23,7 +23,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"5f0b9d4a75658de0f7cf81467a48cea0">
+		["MD5-CAM-1.0.1"] = <"8eb9e5f8059e5a2373af43ff9509fe71">
 		["build_uid"] = <"f16be5e4-a62e-3b1e-8086-29a66ead3b9b">
 	>
 
@@ -45,10 +45,39 @@ definition
 					ENTRY[at0004] occurrences matches {0..1} matches {*}    -- Fecha de firma
 					ENTRY[at0005] occurrences matches {0..1} matches {*}    -- Fecha inicio de periodo
 					ENTRY[at0006] occurrences matches {0..1} matches {*}    -- Fecha fin periodo
-					allow_archetype ENTRY[at0022] occurrences matches {0..*} matches {    -- Responsable
+					allow_archetype SECTION[at0023] occurrences matches {0..*} matches {    -- Responsable
 						include
-							archetype_id/value matches {/.*/}
+							archetype_id/value matches {/.*|openEHR-EHR-SECTION\.profesionalsanitario\.v0/}
 					}
+				}
+			}
+			SECTION[at0025] occurrences matches {0..1} matches {    -- Datos de la institución
+				items cardinality matches {1..*; unordered} matches {
+					allow_archetype SECTION[at0024] occurrences matches {0..*} matches {    -- Centro de atención
+						include
+							archetype_id/value matches {/.*|openEHR-EHR-SECTION\.centrosanitario\.v0/}
+					}
+				}
+			}
+			SECTION[at0026] occurrences matches {0..1} matches {    -- Datos del paciente
+				items cardinality matches {1..*; unordered} matches {
+					allow_archetype SECTION[at0028] occurrences matches {0..*} matches {    -- Datos demográficos
+						include
+							archetype_id/value matches {/.*|openEHR-EHR-SECTION\.datosdemograficos\.v0/}
+					}
+					allow_archetype SECTION[at0029] occurrences matches {0..*} matches {    -- Datos clínicos
+						include
+							archetype_id/value matches {/.*|openEHR-EHR-SECTION\.datosclinicos\.v0/}
+					}
+				}
+			}
+			SECTION[at0030] occurrences matches {0..1} matches {    -- Datos del proceso asistencial
+				items cardinality matches {1..*; unordered} matches {
+					allow_archetype SECTION[at0031] occurrences matches {0..*} matches {    -- Información sobre la exploración física
+						include
+							archetype_id/value matches {/.*|openEHR-EHR-SECTION\.exploracionfisica\.v0/}
+					}
+					GENERIC_ENTRY[at0033] occurrences matches {0..1} matches {*}    -- Conclusiones
 				}
 			}
 		}
@@ -78,8 +107,40 @@ ontology
 					text = <"Fecha fin periodo">
 					description = <"">
 				>
-				["at0022"] = <
+				["at0023"] = <
 					text = <"Responsable">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Centro de atención">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Datos de la institución">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Datos del paciente">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"Datos demográficos">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Datos clínicos">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Datos del proceso asistencial">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Información sobre la exploración física">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Conclusiones">
 					description = <"">
 				>
 			>
